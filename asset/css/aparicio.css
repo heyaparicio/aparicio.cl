@@ -35,7 +35,7 @@
 
 
 /* 2. ELEMENTOS BASE */
-html, body { color: #292929; font-family: var(--bs-font-principal); }
+html, body { color: #1E2435; background-color: #EEF1F6; font-family: var(--bs-font-principal); }
 
 
 a, button { text-decoration: none; transition: 0.25s; }
