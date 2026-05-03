@@ -91,6 +91,58 @@
                     </div> <!-- cierre row -->
                 </div>
             </section>    
+
+            <section>
+                <div class="dots">
+                    <div class="cards py-5">
+                        <div class="cardi" active>
+                            <img src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=640"
+                            alt="Empatizar" class="card__image" decoding="async" fetchpriority="high">
+                            <div class="card__infos">
+                            <h3 class="card__name">01 Empatizar</h3>
+                            <p class="card__desc">Todo parte de salir a observar y escuchar. Uso investigación cualitativa y cuantitativa, entrevistas y observación directa para entender el contexto real detrás del problema.</p>
+                            </div>
+                        </div>
+
+                        <div class="cardi">
+                            <img src="https://images.pexels.com/photos/3184325/pexels-photo-3184325.jpeg?auto=compress&cs=tinysrgb&w=640"
+                            alt="Definir" class="card__image" loading="lazy" decoding="async">
+                            <div class="card__infos">
+                            <h3 class="card__name">02 Definir</h3>
+                            <p class="card__desc">Con la investigación encima, sintetizo los hallazgos para nombrar el problema real. Un buen "How Might We" vale más que horas de brainstorming sin dirección.</p>
+                            </div>
+                        </div>
+
+                        <div class="cardi">
+                            <img src="https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=640"
+                            alt="Idear" class="card__image" loading="lazy" decoding="async">
+                            <div class="card__infos">
+                            <h3 class="card__name">03 Idear</h3>
+                            <p class="card__desc">Aquí se abre el embudo. Facilito sesiones de ideación donde todas las ideas tienen cabida antes de filtrar. Cantidad primero, calidad después.</p>
+                            </div>
+                        </div>
+
+                        <div class="cardi">
+                            <img src="https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=640"
+                            alt="Prototipar" class="card__image" loading="lazy" decoding="async">
+                            <div class="card__infos">
+                            <h3 class="card__name">04 Prototipar</h3>
+                            <p class="card__desc">Hago tangible la idea lo antes posible, con el mínimo esfuerzo necesario. Papel, Figma o código según lo que el prototipo necesite demostrar.</p>
+                            </div>
+                        </div>
+
+                        <div class="cardi">
+                            <img src="https://images.pexels.com/photos/3184357/pexels-photo-3184357.jpeg?auto=compress&cs=tinysrgb&w=640"
+                            alt="Testear" class="card__image" loading="lazy" decoding="async">
+                            <div class="card__infos">
+                            <h3 class="card__name">05 Testear</h3>
+                            <p class="card__desc">El prototipo vuelve a las personas. Observo, no explico. Cada test es una oportunidad de aprender algo que el equipo no sabía que no sabía.</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
         </main>
 
         <footer class="bg-negro-noise py-5">
@@ -132,6 +184,19 @@
             };
         
             window.addEventListener("pointermove", UPDATE);
+        </script>
+        <script>
+            const container = document.querySelector(".cards");
+            let activeCard = container.querySelector(".cardi[active]") ?? null;
+
+            container.addEventListener("click", ({ target }) => {
+            const card = target.closest(".cardi");
+            if (!card || card === activeCard) return;
+
+            activeCard?.removeAttribute("active");
+            card.setAttribute("active", "");
+            activeCard = card;
+            });
         </script>
     </body>
 </html>
