@@ -63,7 +63,6 @@ p {
 }
 
 /* 3. UTILIDADES GENERALES */
-#card-home .card { padding: 0; border: none; background: transparent; }
 
 .card { border-radius: 26px; border: none; }
 .card .card-body { padding: 12px 12px 24px 12px; }
@@ -126,12 +125,6 @@ article > img.layer-4 {
 .offcanvas-header { padding-top: 40.600px; padding-left: 22px;  }
 .btn-close, .offcanvas-title, .offcanvas-body a.nav-link { color: #292929; }
 .offcanvas-title { font-size: 1.25rem; }
-
-.single-span { font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.25px; font-weight: 700; }
-.single-heading { font-size: 3rem; letter-spacing: 0.25px; line-height: 4rem; font-weight: 300; }
-.single-heading b { font-weight: 700;}
-
-
 
 
 .card-title a { font-weight: 800; margin-bottom: 12px; color: #292929; }
