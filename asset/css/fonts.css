@@ -1,112 +1,282 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+/* ==========================================================================
+   SISTEMA TIPOGRÁFICO — Carlos Aparicio Portfolio
+   Fuentes: Ubuntu (títulos) + Inter Tight (cuerpo y UI)
+   Escala: Perfect Fourth (×1.333) sobre base 16px
+   Grilla: múltiplos de 8pt
+   ========================================================================== */
 
-.inter-tight-thin {
-  font-family: "Inter Tight", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 100;
-  font-style: normal;
+/* --------------------------------------------------------------------------
+   IMPORTS — Google Fonts
+   -------------------------------------------------------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,400;0,500;0,700;1,400&family=Inter+Tight:ital,wght@0,400;0,500;0,700;1,400&display=swap');
+
+
+/* --------------------------------------------------------------------------
+   TOKENS — Variables CSS
+   -------------------------------------------------------------------------- */
+:root {
+
+  /* Familias tipográficas */
+  --font-display:    'Ubuntu', sans-serif;
+  --font-body:       'Inter Tight', sans-serif;
+
+  /* Paleta cromática */
+  --color-bg:        #D2D9E7;
+  --color-surface:   #EEF1F6;
+  --color-text-base: #1E2435;
+  --color-text-sec:  #4A5568;
+  --color-accent:    #FB0040;
+
+  /* Escala de tamaños — Perfect Fourth */
+  --text-display:    64px;   /* Hero exclusivo                  */
+  --text-h1:         48px;   /* Título de página                */
+  --text-h2:         40px;   /* Título de sección               */
+  --text-h3:         32px;   /* Subsección                      */
+  --text-h4:         24px;   /* Componente / card               */
+  --text-lead:       20px;   /* Párrafo introductorio           */
+  --text-body:       16px;   /* Cuerpo principal — base 1rem    */
+  --text-small:      14px;   /* Texto de apoyo / metadata       */
+  --text-label:      12px;   /* Labels, eyebrows, UI            */
+
+  /* Line heights — múltiplos de 8 */
+  --lh-display:      72px;
+  --lh-h1:           56px;
+  --lh-h2:           48px;
+  --lh-h3:           40px;
+  --lh-h4:           32px;
+  --lh-lead:         32px;
+  --lh-body:         28px;
+  --lh-small:        24px;
+  --lh-label:        16px;
+
+  /* Letter spacing */
+  --ls-display:      -0.5px;
+  --ls-h1:           -0.3px;
+  --ls-h2:           -0.2px;
+  --ls-h3:            0px;
+  --ls-h4:            0px;
+  --ls-label:         0.08em;
+
+  /* Espaciados verticales — múltiplos de 8 */
+  --space-2:          8px;
+  --space-3:         12px;
+  --space-4:         16px;
+  --space-6:         24px;
+  --space-8:         32px;
+  --space-12:        48px;
+  --space-16:        64px;
+  --space-24:        96px;
 }
 
-.inter-tight-extralight {
-  font-family: "Inter Tight", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 200;
-  font-style: normal;
+
+/* --------------------------------------------------------------------------
+   BASE
+   -------------------------------------------------------------------------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
-.inter-tight-light {
-  font-family: "Inter Tight", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 300;
-  font-style: normal;
+html {
+  font-size: 16px;           /* base para rem */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
-.inter-tight-regular {
-  font-family: "Inter Tight", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
+body {
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  line-height: var(--lh-body);
+  color: var(--color-text-base);
+  background-color: var(--color-bg);
 }
 
-.inter-tight-medium {
-  font-family: "Inter Tight", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 500;
-  font-style: normal;
+
+/* --------------------------------------------------------------------------
+   DISPLAY — Solo para hero / portada
+   -------------------------------------------------------------------------- */
+.text-display {
+  font-family:     var(--font-display);
+  font-size:       var(--text-display);
+  line-height:     var(--lh-display);
+  font-weight:     700;
+  letter-spacing:  var(--ls-display);
+  color:           var(--color-text-base);
 }
 
-.inter-tight-semibold {
-  font-family: "Inter Tight", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 600;
-  font-style: normal;
+
+/* --------------------------------------------------------------------------
+   HEADINGS
+   -------------------------------------------------------------------------- */
+h1,
+.h1 {
+  font-family:     var(--font-display);
+  font-size:       var(--text-h1);
+  line-height:     var(--lh-h1);
+  font-weight:     700;
+  letter-spacing:  var(--ls-h1);
+  color:           var(--color-text-base);
+  margin-bottom:   var(--space-6);
 }
 
-.inter-tight-bold {
-  font-family: "Inter Tight", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 700;
-  font-style: normal;
+h2,
+.h2,
+h2 a {
+  font-family:     var(--font-display);
+  font-size:       var(--text-h2);
+  line-height:     var(--lh-h2);
+  font-weight:     700;
+  letter-spacing:  var(--ls-h2);
+  color:           var(--color-text-base);
+  margin-bottom:   var(--space-6);
 }
 
-.inter-tight-extrabold {
-  font-family: "Inter Tight", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 800;
-  font-style: normal;
+h3,
+.h3 {
+  font-family:     var(--font-display);
+  font-size:       var(--text-h3);
+  line-height:     var(--lh-h3);
+  font-weight:     500;
+  letter-spacing:  var(--ls-h3);
+  color:           var(--color-text-base);
+  margin-bottom:   var(--space-4);
 }
 
-.inter-tight-black {
-  font-family: "Inter Tight", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 900;
-  font-style: normal;
+h4,
+.h4 {
+  font-family:     var(--font-display);
+  font-size:       var(--text-h4);
+  line-height:     var(--lh-h4);
+  font-weight:     500;
+  letter-spacing:  var(--ls-h4);
+  color:           var(--color-text-base);
+  margin-bottom:   var(--space-4);
 }
 
-.ubuntu-light {
-  font-family: "Ubuntu", sans-serif;
-  font-weight: 300;
-  font-style: normal;
+
+/* --------------------------------------------------------------------------
+   PÁRRAFOS Y CUERPO
+   -------------------------------------------------------------------------- */
+
+/* Párrafo introductorio — va justo bajo el H1 o H2 */
+.text-lead {
+  font-family:   var(--font-body);
+  font-size:     var(--text-lead);
+  line-height:   var(--lh-lead);
+  font-weight:   400;
+  color:         var(--color-text-sec);
+  margin-bottom: var(--space-8);
+  max-width:     640px;
 }
 
-.ubuntu-regular {
-  font-family: "Ubuntu", sans-serif;
-  font-weight: 400;
-  font-style: normal;
+/* Párrafo de cuerpo principal */
+p,
+.text-body {
+  font-family:   var(--font-body);
+  font-size:     var(--text-body);
+  line-height:   var(--lh-body);
+  font-weight:   400;
+  color:         var(--color-text-sec);
+  margin-bottom: var(--space-4);
+  max-width:     640px;
 }
 
-.ubuntu-medium {
-  font-family: "Ubuntu", sans-serif;
-  font-weight: 500;
-  font-style: normal;
+p:last-child,
+.text-body:last-child {
+  margin-bottom: 0;
 }
 
-.ubuntu-bold {
-  font-family: "Ubuntu", sans-serif;
-  font-weight: 700;
-  font-style: normal;
+/* Texto pequeño — metadata, fechas, notas */
+.text-small {
+  font-family:   var(--font-body);
+  font-size:     var(--text-small);
+  line-height:   var(--lh-small);
+  font-weight:   400;
+  color:         var(--color-text-sec);
 }
 
-.ubuntu-light-italic {
-  font-family: "Ubuntu", sans-serif;
-  font-weight: 300;
-  font-style: italic;
+
+/* --------------------------------------------------------------------------
+   LABEL / EYEBROW
+   -------------------------------------------------------------------------- */
+
+/* Label en mayúsculas — categorías, disciplinas, UI */
+.text-label,
+.eyebrow {
+  font-family:     var(--font-body);
+  font-size:       var(--text-label);
+  line-height:     var(--lh-label);
+  font-weight:     500;
+  letter-spacing:  var(--ls-label);
+  text-transform:  uppercase;
+  color:           var(--color-accent);
+  display:         block;
+  margin-bottom:   var(--space-2);
 }
 
-.ubuntu-regular-italic {
-  font-family: "Ubuntu", sans-serif;
-  font-weight: 400;
-  font-style: italic;
+/* Label neutro — sin acento */
+.text-label--neutral {
+  color: var(--color-text-sec);
 }
 
-.ubuntu-medium-italic {
-  font-family: "Ubuntu", sans-serif;
-  font-weight: 500;
-  font-style: italic;
+
+/* --------------------------------------------------------------------------
+   FRASE FUERZA — Blockquote editorial
+   -------------------------------------------------------------------------- */
+.frase-fuerza {
+  border-left:   3px solid var(--color-accent);
+  padding:       var(--space-3) var(--space-6);
+  margin:        var(--space-8) 0;
 }
 
-.ubuntu-bold-italic {
-  font-family: "Ubuntu", sans-serif;
-  font-weight: 700;
-  font-style: italic;
+.frase-fuerza p {
+  font-family:   var(--font-display);
+  font-size:     var(--text-h3);
+  line-height:   var(--lh-h3);
+  font-weight:   500;
+  font-style:    italic;
+  color:         var(--color-text-base);
+  max-width:     none;
+  margin-bottom: 0;
+}
+
+
+/* --------------------------------------------------------------------------
+   UTILIDADES
+   -------------------------------------------------------------------------- */
+
+/* Color */
+.text-accent   { color: var(--color-accent); }
+.text-base     { color: var(--color-text-base); }
+.text-secondary{ color: var(--color-text-sec); }
+
+/* Peso */
+.font-regular  { font-weight: 400; }
+.font-medium   { font-weight: 500; }
+.font-bold     { font-weight: 700; }
+
+/* Familia */
+.font-display  { font-family: var(--font-display); }
+.font-body     { font-family: var(--font-body); }
+
+/* Alineación */
+.text-left     { text-align: left; }
+.text-center   { text-align: center; }
+.text-right    { text-align: right; }
+
+/* Sin max-width — para títulos que ocupan todo el ancho */
+.text-full     { max-width: none; }
+
+
+/* --------------------------------------------------------------------------
+   RESET DE MÁRGENES EN PRIMEROS HIJOS
+   -------------------------------------------------------------------------- */
+h1:first-child,
+h2:first-child,
+h3:first-child,
+h4:first-child,
+p:first-child {
+  margin-top: 0;
 }
