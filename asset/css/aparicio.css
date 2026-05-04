@@ -24,10 +24,7 @@
 :root {
   --bs-font-principal: "Ubuntu", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --bs-font-parrafo: "Inter Tight", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-  --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
   --bs-body-font-family: var(--bs-font-sans-serif);
-  --bs-body-font-size: 1rem;
 
   /* Paleta cromática */
   --color-bg:        #D2D9E7;
@@ -42,7 +39,7 @@
 
 
 /* 2. ELEMENTOS BASE */
-html, body { color: #1E2435; background-color: #EEF1F6; font-family: var(--bs-font-principal); }
+html, body { color: #1E2435; background-color: #EEF1F6; }
 
 
 a, button { text-decoration: none; transition: 0.35s; }
@@ -82,13 +79,6 @@ p {
   font-family: var(--bs-font-parrafo);
   font-size: 1.1rem;
   font-weight: 300;
-  line-height: 155%;
-  letter-spacing: 0.25px;
-}
-
-.monospace {
-  font-family: var(--bs-font-monospace);
-  font-weight: 400;
   line-height: 155%;
   letter-spacing: 0.25px;
 }
@@ -236,9 +226,6 @@ background: linear-gradient(87deg, rgba(252, 58, 35, 1) 0%, rgba(251, 0, 64, 1) 
 
 #main .navbar-toggler { border: none; color: #1E2435; }
 #mainNavbar .navbar-toggler { border: none; color: #EEF1F6; }
-
-.hero-titulo { font-size: 4rem; font-family: var(--bs-font-titular); font-weight: 300; color: #eee; }
-.hero-titulo b { font-weight: 600 }
 
 .header-bg-gris { background-color: #1E2435; background-image: url(../img/noise.png); border-radius: 20px; margin: 20px; height: calc(100vh - 40px); padding-top: 10px;}
 .header-bg-gris-single { background-color: #1E2435; background-image: url(../img/noise.png); border-radius: 20px; margin: 20px;}

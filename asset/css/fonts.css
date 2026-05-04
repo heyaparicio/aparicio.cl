@@ -8,7 +8,7 @@
 /* --------------------------------------------------------------------------
    IMPORTS — Google Fonts
    -------------------------------------------------------------------------- */
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,400;0,500;0,700;1,400&family=Inter+Tight:ital,wght@0,400;0,500;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
 
 
 /* --------------------------------------------------------------------------
@@ -19,6 +19,7 @@
   /* Familias tipográficas */
   --font-display:    'Ubuntu', sans-serif;
   --font-body:       'Inter Tight', sans-serif;
+  --font-monospace:   'IBM Plex Mono', monospace;
 
   /* Paleta cromática */
   --color-bg:        #D2D9E7;
@@ -101,11 +102,11 @@ body {
   font-family:     var(--font-display);
   font-size:       var(--text-display);
   line-height:     var(--lh-display);
-  font-weight:     700;
+  font-weight:     300;
   letter-spacing:  var(--ls-display);
-  color:           var(--color-text-base);
+  color:           var(--color-surface);
 }
-
+.text-display b { font-weight: 700; }
 
 /* --------------------------------------------------------------------------
    HEADINGS
@@ -221,6 +222,12 @@ p:last-child,
   color: var(--color-text-sec);
 }
 
+.monospace {
+  font-family: var(--font-monospace);
+  font-weight: 500;
+  line-height: 155%;
+  letter-spacing: 0.25px;
+}
 
 /* --------------------------------------------------------------------------
    FRASE FUERZA — Blockquote editorial
@@ -251,6 +258,7 @@ p:last-child,
 .text-accent   { color: var(--color-accent); }
 .text-base     { color: var(--color-text-base); }
 .text-secondary{ color: var(--color-text-sec); }
+.text-surface  { color: var(--color-surface); }
 
 /* Peso */
 .font-regular  { font-weight: 400; }
