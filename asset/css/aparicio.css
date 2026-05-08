@@ -102,7 +102,7 @@ p {
 }
 
 
-article { position: relative; width: 100%; overflow: hidden; height: 80vh; }
+.article article { position: relative; width: 100%; overflow: hidden; height: 80vh; }
 
 /* Capa base que define altura */
 article > img.layer-1 {
@@ -234,6 +234,29 @@ background: linear-gradient(87deg, rgba(252, 58, 35, 1) 0%, rgba(251, 0, 64, 1) 
 .bg-negro-noise { background-color: #1E2435; background-image: url(../img/noise.png);}
 
 .hero { min-height: 80vh; display: flex; align-items: center; }
+
+.spacer {
+  width: 100vw;
+  height: 30vh;
+  background-color: var(--color-text-sec);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.spacer > span {
+  position: absolute;
+  color: transparent;
+  width: 500vw;
+  font-size: 5em;
+  font-weight: 900;
+  font-family: var(--bs-font-principal);
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: var(--color-bg);
+}
 
 footer .nav .nav-link { color: #eee; }
 
@@ -415,6 +438,17 @@ footer .nav .nav-link { color: #eee; }
   .header-bg-gris, .navbar.fixed-top { margin: 10px;}
   .navbar.fixed-top.scrolled  { margin: 10px 10px 0 10px; }
 
+  .spacer > span {
+  position: absolute;
+  color: transparent;
+  width: 500vw;
+  font-size: 3em;
+  font-weight: 900;
+  font-family: var(--bs-font-principal);
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: var(--color-bg);
+}
+
 
   .rotating-text p {
     font-size: 1.6rem;
@@ -426,6 +460,9 @@ footer .nav .nav-link { color: #eee; }
     vertical-align: top;
     font-weight: 200;
   }
+
+
+  
   .navbar {
     transition: transform 0.3s ease, opacity 0.3s ease;
   }
