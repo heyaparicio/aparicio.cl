@@ -436,7 +436,7 @@ footer .nav .nav-link { color: #eee; }
   .hero { padding-top: 60px; }
   .article { position: relative; width: 100%; height: 50vh; overflow: hidden;} 
   .header-bg-gris, .navbar.fixed-top { margin: 10px;}
-  .header-bg-gris { height: calc(100vh - 20px);}
+  .header-bg-gris { height: calc(100vh - 20px); padding-top: 0;}
   .navbar.fixed-top.scrolled  { margin: 10px 10px 0 10px; }
 
   .spacer > span {
