@@ -6,48 +6,44 @@ document.addEventListener("DOMContentLoaded", () => {
   });
   
   /* -----------------------------------
-     1. Cursor personalizado con seguimiento y clic
-  ----------------------------------- */
-  function initCursor() {
-    const cursor = document.querySelector('.cursor');
-    if (!cursor) return;
-  
-    let mouseX = 0, mouseY = 0;
-    let currentX = 0, currentY = 0;
-    const speed = 0.3;
-  
-    document.addEventListener('mousemove', (e) => {
-      mouseX = e.clientX;
-      mouseY = e.clientY;
-      cursor.style.opacity = 1;
-    });
-  
-    function updateCursor() {
-      currentX += (mouseX - currentX) * speed;
-      currentY += (mouseY - currentY) * speed;
-      cursor.style.left = currentX + 'px';
-      cursor.style.top = currentY + 'px';
-      requestAnimationFrame(updateCursor);
-    }
-  
+   1. Cursor personalizado + efecto magnético
+----------------------------------- */
+function initCursor() {
+  const cursor = document.querySelector('#cursor');
+  if (!cursor) return;
+
+  let mouseX = 0, mouseY = 0;
+  let currentX = 0, currentY = 0;
+  const speed = 0.3;
+
+  document.addEventListener('mousemove', (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+    cursor.style.opacity = 1;
+  });
+
+  function updateCursor() {
+    currentX += (mouseX - currentX) * speed;
+    currentY += (mouseY - currentY) * speed;
+    cursor.style.left = currentX + 'px'; // 👈 left/top, no transform
+    cursor.style.top = currentY + 'px';
     requestAnimationFrame(updateCursor);
-  
-    document.addEventListener('mousedown', () => {
-      cursor.style.transform = 'scale(1.5)';
-    });
-  
-    document.addEventListener('mouseup', () => {
-      cursor.style.transform = 'scale(1)';
-    });
-  
-    document.addEventListener('pointerleave', () => {
-      cursor.style.opacity = 0;
-    });
-  
-    document.addEventListener('pointerenter', () => {
-      cursor.style.opacity = 1;
-    });
   }
+  requestAnimationFrame(updateCursor);
+
+  document.addEventListener('mousedown', () => cursor.style.transform = 'translate(-50%, -50%) scale(1.5)');
+  document.addEventListener('mouseup',   () => cursor.style.transform = 'translate(-50%, -50%) scale(1)');
+
+
+  document.documentElement.addEventListener('mouseleave', () => cursor.style.opacity = 0);
+  document.documentElement.addEventListener('mouseenter', () => cursor.style.opacity = 1);
+
+  // Magnético — solo reacciona el cursor, el elemento no se mueve
+  document.querySelectorAll('.magnetic').forEach((el) => {
+    el.addEventListener('mouseenter', () => cursor.classList.add('magnet'));
+    el.addEventListener('mouseleave', () => cursor.classList.remove('magnet'));
+  });
+}
   
   function initStickyHeader() {
     const header = document.querySelector(".navbar");

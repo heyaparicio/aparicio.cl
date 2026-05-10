@@ -3,7 +3,20 @@
    Orden: Base → Utilidades → Componentes → Animaciones → Responsive
    Al final: reglas para mover a fonts.css
    ============================================================ */
+:root {
+  /* Paleta cromática */
+  --color-bg:        #D2D9E7;
+  --color-surface:   #EEF1F6;
+  --color-text-base: #1E2435;
+  --color-text-sec:  #4A5568;
+  --color-accent:    #FB0040;
+  --easing: cubic-bezier(0.165, 0.84, 0.44, 1);
+}
 
+#scroll-content {
+  will-change: transform;
+  /* Smooth skewing performance */
+}
 
 /* ============================================================
    1. SELECCIÓN
@@ -20,11 +33,13 @@
 html, body {
   color: #1E2435;
   background-color: #EEF1F6;
+  cursor: none;
 }
 
 a, button, .boton {
   text-decoration: none;
   transition: background-color 0.3s, color 0.3s;
+  cursor: none;
 }
 
 
@@ -113,8 +128,10 @@ a, button, .boton {
    6. CURSOR PERSONALIZADO
    ============================================================ */
 
-.cursor {
+/* --- CURSOR --- */
+#cursor {
   position: fixed;
+  opacity: 0;
   top: 0;
   left: 0;
   width: 20px;
@@ -125,7 +142,28 @@ a, button, .boton {
   mix-blend-mode: difference;
   z-index: 9999;
   transform: translate(-50%, -50%);
-  transition: transform 0.15s ease;
+  transition: transform 0.15s ease, width 0.2s ease, height 0.2s ease;
+}
+
+#cursor.magnet {
+  width: 90px;
+  height: 90px;
+  background: transparent;
+  border: 1px solid var(--color-accent);
+  backdrop-filter: blur(0px);
+  /* Performance fix */
+}
+
+#cursor.magnet::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 10px;
+  height: 10px;
+  background: var(--color-accent);
+  border-radius: 50%;
 }
 
 

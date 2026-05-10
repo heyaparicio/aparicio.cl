@@ -21,13 +21,6 @@
   --font-body:       'Inter Tight', sans-serif;
   --font-monospace:   'IBM Plex Mono', monospace;
 
-  /* Paleta cromática */
-  --color-bg:        #D2D9E7;
-  --color-surface:   #EEF1F6;
-  --color-text-base: #1E2435;
-  --color-text-sec:  #4A5568;
-  --color-accent:    #FB0040;
-
   /* Escala de tamaños — Perfect Fourth (1.333) */
 /* Base: 16px → cada paso × 1.333             */
 

@@ -13,12 +13,12 @@
     <link rel="stylesheet" href="asset/css/aparicio.css"/>
     <link rel="stylesheet" href="asset/css/home.css"/>
   </head>
-  <body>
-    <div class="cursor"></div>
+  <body id="scroll-content">
+    <div id="cursor"></div>
     <section class="header-bg-gris">
       <header class="navbar-expand-lg navbar" id="mainNavbar" tabindex="0">
         <nav class="container" aria-label="Menu principal">
-          <a class="navbar-brand d-flex align-items-center gap-2 cntr" id="logo_erlen-masson" href="index.html">
+          <a class="navbar-brand d-flex align-items-center gap-2 cntr magnetic" id="logo_erlen-masson" href="index.html">
             <svg
               id="aparicio"
               xmlns="http://www.w3.org/2000/svg"
@@ -47,13 +47,13 @@
           <div class="collapse navbar-collapse d-none d-lg-flex" id="navbarNav">
             <ul class="navbar-nav ms-auto">
               <li class="nav-item">
-                <a class="nav-link" href="proyectos.html">Proyectos</a>
+                <a class="nav-link magnetic" href="proyectos.html">Proyectos</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="docencia.html">Docencia</a>
+                <a class="nav-link magnetic" href="docencia.html">Docencia</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="sobre-mi.html">Sobre mí</a>
+                <a class="nav-link magnetic" href="sobre-mi.html">Sobre mí</a>
               </li>
             </ul>
           </div>
@@ -170,7 +170,7 @@
       <div class="my-6">
         <div class="container">
           <div class="row">
-            <div class="col-lg-6 offset-lg-6" data-aos="fade-down" data-aos-delay="200">
+            <div class="col-lg-6 offset-lg-6 col-md-8 offset-md-4" data-aos="fade-down" data-aos-delay="200">
               <h3 class="display-6">Llegué al diseño desde el código. Por eso cuando diseño, no pienso solo en la pantalla — pienso en la persona que la usa, en el desarrollador que la construye y en el negocio que la sostiene. Un buen diseño funciona para los tres.</h3>
             </div>
           </div>
@@ -179,8 +179,10 @@
       <section class="my-6">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12"><h2 class="mb-5">Proyecto destacado</h2></div>
-                <div class="col-lg-5 my-5">
+                <div class="col-lg-12" data-aos="fade-up" data-aos-delay="200">
+                  <h2 class="mb-5">Proyecto destacado</h2>
+                </div>
+                <div class="col-lg-5 my-5" data-aos="fade-right" data-aos-delay="200">
                   <h3><a href="debuenamano.html">De Buena Mano</a></h3>
                   <p class="text-lead mb-4">¿Cómo simplificar el proceso de compra de segunda mano para familias que nunca han usado un marketplace? — De Buena Mano, 2025</p>
                   <nav class="nav nav-pills">
@@ -188,7 +190,7 @@
                         <a href="debuenamano.html" class="nav-item boton">ver proyecto</a>
                   </nav>
                 </div>
-                <div class="col-lg-6 offset-lg-1">
+                <div class="col-lg-6 offset-lg-1" data-aos="fade-left" data-aos-delay="200">
                     <div class="card-img-container image-noise">
                         <div class="img-parallax one">
                             <a href="#"><img src="asset/img/portafolio/debuenamano/cover_debuenamano.png" class="card-img-top img-zoom main-image ione" alt="Imagen 1"></a>
