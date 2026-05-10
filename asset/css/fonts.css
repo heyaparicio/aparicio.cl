@@ -28,7 +28,9 @@
   --color-text-sec:  #4A5568;
   --color-accent:    #FB0040;
 
-  /* Escala de tamaños — Perfect Fourth */
+  /* Escala de tamaños — Perfect Fourth (1.333) */
+/* Base: 16px → cada paso × 1.333             */
+
   --text-display:    64px;   /* Hero exclusivo                  */
   --text-h1:         48px;   /* Título de página                */
   --text-h2:         40px;   /* Título de sección               */
@@ -135,7 +137,8 @@ h2 a {
 }
 
 h3,
-.h3 {
+.h3,
+h3 a {
   font-family:     var(--font-display);
   font-size:       var(--text-h3);
   line-height:     var(--lh-h3);
@@ -229,6 +232,10 @@ p:last-child,
   letter-spacing: 0.25px;
 }
 
+footer .text-small {
+ padding-top: 8px;
+}
+
 /* --------------------------------------------------------------------------
    FRASE FUERZA — Blockquote editorial
    -------------------------------------------------------------------------- */
@@ -277,6 +284,70 @@ p:last-child,
 /* Sin max-width — para títulos que ocupan todo el ancho */
 .text-full     { max-width: none; }
 
+.rotating-text {
+  position: relative;
+  max-width: 100%;
+  color: var(--color-surface);
+  overflow: hidden; /* evita desborde horizontal */
+}
+
+/* Tipografía fluida: 2rem móvil → 4rem desktop */
+.rotating-text b {
+  font-size: clamp(2rem, 5vw, 4rem);
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  max-width: 100%;
+  line-height: 1.2;
+  vertical-align: top;
+  font-weight: 600;
+}
+
+/* ← Este era el bug principal:
+   sin position: relative, las .word se posicionan
+   respecto al h1 o al ancestro más cercano,
+   no al wrapper que las contiene */
+b.word-wrapper {
+  position: relative;        /* contexto para los absolute */
+  display: inline-block;
+  height: 1.2em;             /* igual al line-height del b */
+  min-width: 8ch;            /* ancho mínimo = palabra más larga */
+  max-width: 100%;
+  vertical-align: bottom;
+  overflow: hidden;
+}
+
+.rotating-text b .word {
+  white-space: nowrap;
+  font-size: inherit;
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: flex;
+  opacity: 0;
+  color: #FB0040;
+  max-width: 100%;
+}
+
+/* Letras — sin cambios */
+.rotating-text b .word .letter {
+  transform-origin: center center 25px;
+}
+.rotating-text b .word .letter.out {
+  transform: rotateX(90deg);
+  transition: 0.32s cubic-bezier(0.6, 0, 0.7, 0.2);
+}
+.rotating-text b .word .letter.in {
+  transition: 0.38s ease;
+}
+.rotating-text b .word .letter.behind {
+  transform: rotateX(-90deg);
+}
+
+
+/* Navbar brand — familia tipográfica */
+.navbar-brand span { font-family: var(--font-display); }
+
 
 /* --------------------------------------------------------------------------
    RESET DE MÁRGENES EN PRIMEROS HIJOS
@@ -287,4 +358,21 @@ h3:first-child,
 h4:first-child,
 p:first-child {
   margin-top: 0;
+}
+
+/* Tablet — el clamp() ya lo resuelve,
+   pero este override da más control fino */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .rotating-text b {
+    font-size: clamp(2.2rem, 3.8vw, 3.2rem);
+  }
+}
+
+/* Mobile — mantiene el comportamiento actual */
+@media (max-width: 767px) {
+  .rotating-text b {
+    font-size: 2.2rem;
+    font-weight: 500;
+    line-height: 1.3;
+  }
 }
