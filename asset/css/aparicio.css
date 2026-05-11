@@ -193,6 +193,8 @@ a, button, .boton {
   border-radius: 20px;
   box-shadow: rgba(0, 0, 0, 0.1) -4px 9px 25px -6px;
   margin: 20px 20px 0 20px;
+  padding-top: 0;
+  padding-bottom: 0;
 }
 
 .navbar.fixed-top .nav-link,
@@ -215,8 +217,8 @@ a, button, .boton {
 }
 
 /* Navbar — variante clara (#main) */
-#main { margin-top: 30px; }
-#main nav { padding-top: 10px; padding-bottom: 10px; }
+#main { margin-top: 20px; }
+#main nav { padding-top: 1.6rem; padding-bottom: 1.6rem; }
 #main nav .navbar-brand span { color: #1E2435; font-weight: 600; }
 
 #navbar .navbar-nav .nav-link {
@@ -297,7 +299,6 @@ h3 a:hover  { color: #FB0040; }
   border-radius: 20px;
   margin: 20px;
   height: calc(100vh - 40px);
-  padding-top: 10px;
 }
 
 .header-bg-gris .navbar { padding-top: 1.6rem; padding-bottom: 1.6rem; }

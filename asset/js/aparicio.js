@@ -12,7 +12,6 @@ function initCursor() {
   const cursor = document.querySelector('#cursor');
   if (!cursor) return;
 
-  // ✅ Desactivar en táctil
   if (window.matchMedia('(pointer: coarse)').matches) {
     cursor.style.display = 'none';
     return;
@@ -20,12 +19,27 @@ function initCursor() {
 
   let mouseX = 0, mouseY = 0;
   let cursorX = 0, cursorY = 0;
+  let initialized = false;
+
+  cursor.style.opacity = '0';
 
   function lerp(start, end, factor) {
     return start + (end - start) * factor;
   }
 
+  function setInitialPosition(e) {
+    cursorX = e.clientX;
+    cursorY = e.clientY;
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+    cursor.style.opacity = '1';
+    initialized = true;
+  }
+
+  document.addEventListener('mouseenter', setInitialPosition);
+
   window.addEventListener('mousemove', (e) => {
+    if (!initialized) setInitialPosition(e);
     mouseX = e.clientX;
     mouseY = e.clientY;
   }, { passive: true });
@@ -45,7 +59,6 @@ function initCursor() {
     cursor.style.transform = `translate(${cursorX}px, ${cursorY}px) translate(-50%, -50%) scale(1)`;
   });
 
-  // Magnético
   document.querySelectorAll('.magnetic').forEach((el) => {
     el.addEventListener('mouseenter', () => cursor.classList.add('magnet'));
     el.addEventListener('mouseleave', () => cursor.classList.remove('magnet'));

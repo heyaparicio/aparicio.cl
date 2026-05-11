@@ -1,0 +1,82 @@
+/* ============================================================
+   ANIMATIONS.CSS — sistema de entradas en scroll
+   Reemplaza AOS. Trabaja con animations.js + IntersectionObserver
+   Cargar después de tokens.css en el <head>
+   ============================================================ */
+
+
+/* ============================================================
+   1. ESTADO INICIAL — todos los elementos invisibles
+      hasta que el observer los detecta en viewport
+   ============================================================ */
+
+[data-reveal] {
+  opacity: 0;
+  transition:
+    opacity   var(--anim-duration, 0.6s) var(--anim-ease, cubic-bezier(0.4, 0, 0.2, 1)),
+    transform var(--anim-duration, 0.6s) var(--anim-ease, cubic-bezier(0.4, 0, 0.2, 1));
+}
+
+
+/* ============================================================
+   2. VARIANTES DE DIRECCIÓN
+      Regla: el elemento viene del lado donde vive en el layout
+      up    → titulares, párrafos, CTAs (lectura vertical)
+      left  → elementos en columna derecha
+      right → elementos en columna izquierda
+      fade  → cuerpo de texto, elementos neutros
+   ============================================================ */
+
+[data-reveal="up"]    { transform: translateY(24px); }
+[data-reveal="down"]  { transform: translateY(-24px); }
+[data-reveal="left"]  { transform: translateX(24px); }
+[data-reveal="right"] { transform: translateX(-24px); }
+[data-reveal="fade"]  { transform: none; }
+
+
+/* ============================================================
+   3. ESTADO VISIBLE — clase añadida por el observer
+   ============================================================ */
+
+[data-reveal].is-visible {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+
+/* ============================================================
+   4. DELAYS — para escalonar elementos en grid o lista
+      Uso: <div data-reveal="up" data-delay="2">
+      Los delays se acumulan dentro de un mismo bloque visual
+   ============================================================ */
+
+[data-delay="1"] { transition-delay: 0.08s; }
+[data-delay="2"] { transition-delay: 0.16s; }
+[data-delay="3"] { transition-delay: 0.24s; }
+[data-delay="4"] { transition-delay: 0.32s; }
+[data-delay="5"] { transition-delay: 0.40s; }
+[data-delay="6"] { transition-delay: 0.48s; }
+
+
+/* ============================================================
+   5. DURACIONES ALTERNATIVAS — para elementos que necesitan
+      más peso visual (heroes, imágenes grandes)
+      Uso: <section data-reveal="fade" data-duration="slow">
+   ============================================================ */
+
+[data-duration="fast"] { --anim-duration: 0.35s; }
+[data-duration="slow"] { --anim-duration: 0.9s;  }
+
+
+/* ============================================================
+   6. ACCESIBILIDAD — respeta la preferencia del usuario
+      de reducir movimiento (configuración del sistema operativo)
+   ============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
