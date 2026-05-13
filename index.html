@@ -20,18 +20,11 @@
       <header class="navbar-expand-lg navbar" id="mainNavbar" tabindex="0">
         <nav class="container" aria-label="Menu principal">
           <a class="navbar-brand d-flex align-items-center gap-2 cntr magnetic" id="logo_erlen-masson" href="index.html">
-            <svg
-              id="aparicio"
-              xmlns="http://www.w3.org/2000/svg"
-              xmlns:i="http://ns.adobe.com/AdobeIllustrator/10.0/"
-              version="1.1"
-              viewBox="0 0 149.8 149.8"
-            >
-              <path
-                class="st0"
-                d="M86.9.4h-39.8l32.7,78c-2.6-.3-5.3-.5-8-.5C32.4,78,.4,110,.4,149.4h36.5c0-19.3,15.5-34.9,34.9-34.9s34.9,15.6,34.9,34.9h42.7L86.9.4Z"
-              />
-            </svg>
+            
+              <svg id="aparicio" xmlns="http://www.w3.org/2000/svg" xmlns:i="http://ns.adobe.com/AdobeIllustrator/10.0/" version="1.1" viewBox="0 0 149.8 149.8">
+                <path class="logo-path st0" d="M86.9.4h-39.8l32.7,78c-2.6-.3-5.3-.5-8-.5C32.4,78,.4,110,.4,149.4h36.5c0-19.3,15.5-34.9,34.9-34.9s34.9,15.6,34.9,34.9h42.7L86.9.4Z"/>
+              </svg>
+      
             <span class="fs-4">APARICIO</span>
           </a>
           <button
@@ -107,7 +100,7 @@
       <div class="container">
         <div class="hero">
           <div class="row d-lg-flex align-items-center justify-content-between">
-            <div class="col-lg-5 col-md-6" data-aos="fade-right" data-aos-delay="200">
+            <div class="col-lg-5 col-md-6" data-reveal="right" data-duration="slow" data-once>
               <h1 class="rotating-text">
                 <b class="text-static">Primero</b>
                 <b class="word-wrapper">
@@ -126,9 +119,9 @@
                 </p>
               </div>
             </div>
-            <div class="col-lg-6 col-md-6" data-aos="fade-left" data-aos-delay="200">
-              <div class="article" data-aos="fade-left" data-aos-delay="300">
-                <div class="btl-1 aos-init aos-animate">
+            <div class="col-lg-6 col-md-6" data-reveal="left" data-delay="1" data-duration="slow" data-once>
+              <div class="article">
+                <div class="btl-1">
                   <img
                     class="alayer alayer-5"
                     src="asset/img/hero/5.png"
@@ -171,7 +164,7 @@
       <div class="my-6">
         <div class="container">
           <div class="row">
-            <div class="col-lg-6 offset-lg-6 col-md-8 offset-md-4" data-aos="fade-down" data-aos-delay="200">
+            <div class="col-lg-6 offset-lg-6 col-md-8 offset-md-4" data-reveal="left">
               <h3 class="display-6">Llegué al diseño desde el código. Por eso cuando diseño, no pienso solo en la pantalla — pienso en la persona que la usa, en el desarrollador que la construye y en el negocio que la sostiene. Un buen diseño funciona para los tres.</h3>
             </div>
           </div>
@@ -180,10 +173,10 @@
       <section class="my-6">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12" data-aos="fade-up" data-aos-delay="200">
+                <div class="col-lg-12" data-reveal="up">
                   <h2 class="mb-5">Proyecto destacado</h2>
                 </div>
-                <div class="col-lg-5 my-5" data-aos="fade-right" data-aos-delay="200">
+                <div class="col-lg-5 my-5" data-reveal="right" data-delay="1">
                   <h3><a class="magnetic" href="debuenamano.html">De Buena Mano</a></h3>
                   <p class="text-lead mb-4">¿Cómo simplificar el proceso de compra de segunda mano para familias que nunca han usado un marketplace? — De Buena Mano, 2025</p>
                   <nav class="nav nav-pills">
@@ -191,7 +184,7 @@
                         <a href="debuenamano.html" class="nav-item boton magnetic">ver proyecto</a>
                   </nav>
                 </div>
-                <div class="col-lg-6 offset-lg-1" data-aos="fade-left" data-aos-delay="200">
+                <div class="col-lg-6 offset-lg-1" data-reveal="left" data-delay="1">
                     <div class="card-img-container image-noise">
                         <div class="img-parallax one">
                             <a href="#"><img src="asset/img/portafolio/debuenamano/cover_debuenamano.png" class="card-img-top img-zoom main-image ione" alt="Imagen 1"></a>
@@ -207,7 +200,7 @@
     <section class="my-6">
         <div class="container">
             <div class="row d-flex align-items-center justify-content-between">
-                <div class="col-lg-5" data-aos="fade-up" data-aos-delay="200">
+                <div class="col-lg-5" data-reveal="right">
                     <h2 class="mb-5">El aula como laboratorio</h2>
                     <img src="asset/img/portafolio/docencia/docencia.png" class="img-fluid br" alt="Registro Digital Day 2025">
                     <div class="d-flex justify-content-between my-3">
@@ -215,7 +208,7 @@
                         <span class="text-small">Viña del Mar</span>
                     </div>    
                 </div>
-                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
+                <div class="col-lg-6" data-reveal="left" data-delay="1">
                     <h3>Enseño con la misma lógica con que diseño.</h3>
                     <p>Antes de preparar una clase, observo. ¿Qué bloquea a este grupo específico? ¿Dónde está la fricción real entre lo que enseño y lo que entienden?.</p>
                     <p>Después defino el problema, prototipo la experiencia de aprendizaje y la testeo en tiempo real — con personas reales, no con un syllabus ideal.
@@ -229,9 +222,9 @@
       <section class="clientes py-5 mt-6">
         <div class="container">
           <div class="row">
-            <div class="col-12" data-aos="fade-up" data-aos-delay="200">
-              <h2 class="mb-5">He diseñado para</h2>
-              <article class="wrapper">
+            <div class="col-12" data-reveal="up">
+              <h4 class="text-center mb-5" data-reveal="up">He diseñado para</h4>
+              <article class="wrapper" data-reveal="fade" data-duration="slow" data-once>
                 <div class="marquee">
                   <div class="marquee__group">
                     <img
@@ -313,14 +306,14 @@
     <footer class="bg-negro-noise py-5">
       <div class="container">
         <div class="row">
-          <div class="col-md-6">
+          <div class="col-lg-6">
             <nav class="nav">
               <a href="https://www.instagram.com/apariciodesign" class="nav-link magnetic" target="_blank" rel="noopener noreferrer">Instagram</a>
               <a href="https://www.linkedin.com/in/hey-aparicio" class="nav-link magnetic" target="_blank" rel="noopener noreferrer" >Linkedin</a>
             </nav>
           </div>
-          <div class="col-md-6">
-            <p class="text-white text-small text-end">
+          <div class="col-lg-6">
+            <p class="text-white text-small text-md-end text-center">
               Lo pienso, lo diseño, lo escribo y lo codifico.
             </p>
           </div>

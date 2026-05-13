@@ -583,6 +583,8 @@ footer .nav .nav-link:hover { color: #FB0040; }
 
   .card-img-container     { border-radius: 16px; border: 10px solid #1E2435; }
 
+  
+
   .spacer > span {
     font-size: 3em;
     font-weight: 900;
@@ -603,4 +605,38 @@ footer .nav .nav-link:hover { color: #FB0040; }
     line-height: 1.2;
     vertical-align: top;
   }
+}
+
+#aparicio .logo-path {
+  fill: #FB0040;
+  stroke: #FB0040;
+  stroke-width: 3;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+  stroke-dasharray: 595;
+  stroke-dashoffset: 595;
+}
+
+#logo_erlen-masson:hover #aparicio .logo-path {
+  animation: draw-logo 1s ease-in-out forwards;
+}
+
+@keyframes draw-logo {
+  0% {
+    fill: #FB0040;
+    stroke-dashoffset: 595;
+  }
+  20% {
+    fill: transparent;
+    stroke-dashoffset: 595;
+  }
+  100% {
+    fill: transparent;
+    stroke-dashoffset: 0;
+  }
+}
+
+#aparicio {
+  width: 40px;
+  height: 40px;
 }
