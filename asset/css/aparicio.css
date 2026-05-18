@@ -609,31 +609,22 @@ footer .nav .nav-link:hover { color: #FB0040; }
 
 #aparicio .logo-path {
   fill: #FB0040;
-  stroke: #FB0040;
+  stroke: var(--color-bg);
   stroke-width: 3;
   stroke-linejoin: round;
   stroke-linecap: round;
-  stroke-dasharray: 595;
-  stroke-dashoffset: 595;
+  stroke-dasharray: 0, 596;
 }
 
 #logo_erlen-masson:hover #aparicio .logo-path {
-  animation: draw-logo 1s ease-in-out forwards;
+  animation: shine 1.2s ease-in-out forwards;
 }
 
-@keyframes draw-logo {
-  0% {
-    fill: #FB0040;
-    stroke-dashoffset: 595;
-  }
-  20% {
-    fill: transparent;
-    stroke-dashoffset: 595;
-  }
-  100% {
-    fill: transparent;
-    stroke-dashoffset: 0;
-  }
+@keyframes shine {
+  0%   { stroke-dasharray:  0,   596;   stroke-dashoffset:  0; }
+  10%  { stroke-dasharray:  60, 536; stroke-dashoffset:  0; }
+  80%  { stroke-dasharray:  60, 536; stroke-dashoffset: -536; }
+  100% { stroke-dasharray:  0,   596;   stroke-dashoffset: -596; }
 }
 
 #aparicio {
